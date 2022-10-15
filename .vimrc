@@ -31,7 +31,7 @@ set scrolloff=10 "begins scrolling before you get to the bottem
 
 set noshowmode
 
-set colorcolumn=80
+set colorcolumn=80,100
 set signcolumn=yes
 
 " Vim-Plug Install
@@ -45,10 +45,46 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'gruvbox-community/gruvbox'
+Plug 'jiangmiao/auto-pairs'
 
 call plug#end()
 
 set t_Co=256
 
 colorscheme gruvbox
+
+" Block Cursor
+let &t_SI = "\e[6 q"
+let &t_EI = "\e[2 q"
+
+" reset the cursor on start (for older versions of vim, usually not required)
+augroup mycmds
+au!
+autocmd vimenter * silent !echo -ne "\e[2 q"
+augroup END
+
+" FZF config
+
+" Ctrl-P to open files
+noremap <C-p> :Files<Cr> 
+
+" Ctrl-B to open files
+noremap <C-b> :Buffers<Cr> 
+
+let g:toggle_term = "<C-j>"
+
+let g:term_buf_nr = -1
+function! ToggleTerminal()
+    if g:term_buf_nr == -1
+        execute "bot term"
+        let g:term_buf_nr = bufnr("$")
+    else
+        execute "bd! " .g:term_buf_nr
+        let g:term_buf_nr = -1
+    endif
+endfunction
+
+" execute "nnoremap ".g:toggle_term ." :call ToggleTerminal()<CR>"
+execute "tnoremap ".g:toggle_term ." <C-W>:call ToggleTerminal()<CR>"
