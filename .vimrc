@@ -2,10 +2,12 @@ filetype plugin indent on
 syntax on
 set backspace=indent,eol,start
 
+set mouse=a
+set nocompatible
+
 set exrc " Auto sources vimrc in vim dir
 
 nnoremap <buffer> <space> :silent mode <bar> redraw! <CR>
-
 
 " Tab stuff
 set tabstop=4 softtabstop=4
@@ -98,3 +100,5 @@ endfunction
 execute "tnoremap ".g:toggle_term ." <C-W>:call ToggleTerminal()<CR>"
 
 command! -nargs=? Vmake :vertical terminal make <args>
+
+
