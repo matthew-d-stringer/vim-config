@@ -1,4 +1,4 @@
-filetype plugin indent on
+"filetype plugin indent on
 syntax on
 set backspace=indent,eol,start
 
@@ -57,6 +57,8 @@ Plug 'gruvbox-community/gruvbox'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sudar/comments.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
