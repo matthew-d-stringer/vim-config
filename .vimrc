@@ -1,6 +1,11 @@
+filetype plugin indent on
 syntax on
+set backspace=indent,eol,start
 
 set exrc " Auto sources vimrc in vim dir
+
+nnoremap <buffer> <space> :silent mode <bar> redraw! <CR>
+
 
 " Tab stuff
 set tabstop=4 softtabstop=4
@@ -11,7 +16,7 @@ set smartindent
 " Number line
 set rnu nu
 
-set nohlsearch " deletes highlight after search
+"set nohlsearch " deletes highlight after search
 
 set hidden " keeps buffer open in the background
 
@@ -48,6 +53,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'jiangmiao/auto-pairs'
+Plug 'sudar/comments.vim'
 
 call plug#end()
 
@@ -68,7 +74,8 @@ augroup END
 " FZF config
 
 " Ctrl-P to open files
-noremap <C-p> :Files<Cr> 
+" noremap <C-p> :Files %:p:h<Cr> 
+noremap <C-p> :Files <Cr> 
 
 " Ctrl-B to open files
 noremap <C-b> :Buffers<Cr> 
@@ -88,3 +95,5 @@ endfunction
 
 " execute "nnoremap ".g:toggle_term ." :call ToggleTerminal()<CR>"
 execute "tnoremap ".g:toggle_term ." <C-W>:call ToggleTerminal()<CR>"
+
+command! -nargs=? Vmake :vertical terminal make <args>
