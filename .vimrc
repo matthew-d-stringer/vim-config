@@ -56,6 +56,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'gruvbox-community/gruvbox'
 Plug 'jiangmiao/auto-pairs'
 Plug 'sudar/comments.vim'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
