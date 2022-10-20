@@ -60,6 +60,7 @@ call plug#end()
 set t_Co=256
 
 colorscheme gruvbox
+set bg=dark
 
 " Block Cursor
 let &t_SI = "\e[6 q"
