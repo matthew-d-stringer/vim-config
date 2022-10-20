@@ -1,4 +1,4 @@
-"filetype plugin indent on
+filetype plugin indent on
 syntax on
 set backspace=indent,eol,start
 
@@ -102,7 +102,3 @@ endfunction
 
 " execute "nnoremap ".g:toggle_term ." :call ToggleTerminal()<CR>"
 execute "tnoremap ".g:toggle_term ." <C-W>:call ToggleTerminal()<CR>"
-
-command! -nargs=? Vmake :vertical terminal make <args>
-
-
