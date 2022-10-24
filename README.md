@@ -90,8 +90,7 @@ git clone https://github.com/matthew-d-stringer/vim-config.git
 ```
 Then run:
 ```sh
-cd ~/vim-config
-stow .vimrc
+ln -sf ~/vim-config/.vimrc ~
 ```
 Then use
 ```
