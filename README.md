@@ -1,6 +1,10 @@
 # My Config
 This config is compatable with CSE 30 pi-clusters.
 
+Installing is very quick and should take less than 1 min. 
+
+Click (here)[#Installing] to see how to install.
+
 # Use
 ## Moving between windows
 Here is default vim behavior. If familiar, feel free to skip to the next
