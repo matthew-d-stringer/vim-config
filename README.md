@@ -3,7 +3,7 @@ This config is compatable with CSE 30 pi-clusters.
 
 Installing is very quick and should take less than 1 min. 
 
-Click (here)[#Installing] to see how to install.
+Click [here](#Installing) to see how to install.
 
 # Use
 ## Moving between windows
@@ -43,7 +43,7 @@ Finally running `:Gdiffsplit` will show you the `git diff` of the current file
 in vim by using `vimdiff`.
 
 For more git commands in this config, refer to 
-(here)[https://github.com/tpope/vim-fugitive].
+[here](https://github.com/tpope/vim-fugitive).
 
 ## Compiling
 ### Default Vim Behavior
