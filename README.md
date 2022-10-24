@@ -64,6 +64,7 @@ To move a window:
 
 ## Opening files
 By typing `Ctrl+p`, vim will search your current directory to find and open files.
+
 While a file is highlighted, you can use 
 - `Enter`to open the file in the current window.
 - `Ctrl+v`to open the file with a vertical split
