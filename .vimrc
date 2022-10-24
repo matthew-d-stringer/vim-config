@@ -102,3 +102,6 @@ endfunction
 
 " execute "nnoremap ".g:toggle_term ." :call ToggleTerminal()<CR>"
 execute "tnoremap ".g:toggle_term ." <C-W>:call ToggleTerminal()<CR>"
+
+command -nargs=? VMake vert terminal make <args>
+command -nargs=? VTerm vert terminal <args>
