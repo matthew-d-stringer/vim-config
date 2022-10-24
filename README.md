@@ -4,6 +4,46 @@ This config is compatable with CSE 30 pi-clusters.
 Installing is very quick and should take less than 1 min. 
 
 Click [here](#Installing) to see how to install.
+Click [here](#Use) to see how to use all the features.
+
+# Installing
+To install:
+**Ignore the `setup.sh` file!**
+Open your home directory.
+Run:
+```sh
+cd ~
+git clone https://github.com/matthew-d-stringer/vim-config.git
+```
+Then run:
+```sh
+ln -sf ~/vim-config/.vimrc ~
+```
+Then use
+```
+vim ~/.vimrc
+```
+to open the configuration file. 
+vim should immediately begin downloading the plugins required.
+However if it does not, in vim you can run
+```
+:PlugInstall
+```
+
+# Pulling changes from repo
+
+Sometimes I may update this config and you may want to pull these from git.
+To do this, pull the repo as usual:
+```sh
+git pull
+```
+Then inside `.vimrc`, run:
+```
+:PlugClean
+:PlugInstall
+```
+These two vim commands will remove any plugins in the vimrc that have been 
+removed, and also install any new ones.
 
 # Use
 ## Moving between windows
@@ -78,42 +118,3 @@ bottom of the screen.
 
 ### Airline
 The bottom bar has more information and a better colorscheme. 
-
-# Installing
-To install:
-**Ignore the `setup.sh` file!**
-Open your home directory.
-Run:
-```sh
-cd ~
-git clone https://github.com/matthew-d-stringer/vim-config.git
-```
-Then run:
-```sh
-ln -sf ~/vim-config/.vimrc ~
-```
-Then use
-```
-vim ~/.vimrc
-```
-to open the configuration file. 
-vim should immediately begin downloading the plugins required.
-However if it does not, in vim you can run
-```
-:PlugInstall
-```
-
-# Pulling changes from repo
-
-Sometimes I may update this config and you may want to pull these from git.
-To do this, pull the repo as usual:
-```sh
-git pull
-```
-Then inside `.vimrc`, run:
-```
-:PlugClean
-:PlugInstall
-```
-These two vim commands will remove any plugins in the vimrc that have been 
-removed, and also install any new ones.
