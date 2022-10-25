@@ -69,14 +69,15 @@ colorscheme gruvbox
 set bg=dark
 
 " Block Cursor
-let &t_SI = "\e[6 q"
-let &t_EI = "\e[2 q"
-
-" reset the cursor on start (for older versions of vim, usually not required)
-augroup mycmds
-au!
-autocmd vimenter * silent !echo -ne "\e[2 q"
-augroup END
+if $TERM == "cygwin"
+	let &t_ti.="\e[1 q"
+	let &t_SI.="\e[5 q"
+	let &t_EI.="\e[1 q"
+	let &t_te.="\e[0 q"
+else
+    let &t_SI = "\e[6 q"
+    let &t_EI = "\e[2 q"
+endif
 
 " FZF config
 
@@ -87,22 +88,7 @@ noremap <C-p> :Files <Cr>
 " Ctrl-B to open files
 noremap <C-b> :Buffers<Cr> 
 
-let g:toggle_term = "<C-j>"
-
-let g:term_buf_nr = -1
-function! ToggleTerminal()
-    if g:term_buf_nr == -1
-        execute "bot term"
-        let g:term_buf_nr = bufnr("$")
-    else
-        execute "bd! " .g:term_buf_nr
-        let g:term_buf_nr = -1
-    endif
-endfunction
-
-" execute "nnoremap ".g:toggle_term ." :call ToggleTerminal()<CR>"
-execute "tnoremap ".g:toggle_term ." <C-W>:call ToggleTerminal()<CR>"
-
 " Custom compiling and terminal commands to work better with vertical split
-command -nargs=? VMake vert terminal make <args>
-command -nargs=? VTerm vert terminal <args>
+"command -nargs=? VMake vert terminal make <args>
+command! VMake vert term make <Cr>
+command! -nargs=? VTerm vert term <args> <Cr>
