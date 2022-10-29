@@ -89,7 +89,15 @@ noremap <C-p> :Files <Cr>
 noremap <C-b> :Buffers<Cr> 
 
 " Custom compiling and terminal commands to work better with vertical split
-command -nargs=* VTerm :vertical terminal <args>
+function! FuncVTerm(...)
+    if a:0 == 0
+        execute("vertical terminal")
+    else
+        execute("vertical terminal ".join(a:000))
+    endif
+endfunction
+
+command -nargs=* VTerm call FuncVTerm(<f-args>) 
 
 function! FuncVMake(...)
     if a:0 == 0
