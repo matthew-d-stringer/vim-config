@@ -108,3 +108,6 @@ function! FuncVMake(...)
 endfunction
 
 command! -nargs=* VMake call FuncVMake(<f-args>)
+
+packadd termdebug
+let g:termdebug_wide=1
